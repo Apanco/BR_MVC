@@ -1,0 +1,55 @@
+.no-webp .inicio {
+    background-image: url(../img/header.jpg);
+}
+.webp .inicio {
+    background-image: url(../img/header.webp);
+}
+
+.header{
+    background-color: $grisOscuro;
+    padding: 0 0 3rem;
+    &.inicio{
+        background-position: center center;
+        background-size: cover;
+        min-height: 40rem;
+
+        @include tablet{
+            min-height: 65rem;
+        }
+        .contenido-header{
+            min-height: 40rem;
+            @include tablet{
+                min-height: 65rem;
+            }
+        }
+    }
+}
+.contenido-header{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    h1{
+        text-align: center;
+        color: $blanco;
+        font-weight: $bold;
+        line-height: 2;
+        max-width: 60rem;
+        font-size: 2.5rem;
+        @include tablet{
+            font-size: 4rem;
+            text-align: left;
+        }
+    }
+}
+.titulo-header{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: auto;
+    display: flex;
+    justify-content: center;
+    h1{
+        text-align: center;
+    }
+}

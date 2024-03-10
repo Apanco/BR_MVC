@@ -1,0 +1,56 @@
+.boton-amarillo{
+    @include boton($amarillo, inline-block);
+}
+
+.boton-amarillo-block{
+    @include boton($amarillo, block);
+}
+.boton-verde{
+    @include boton($verde, inline-flex)
+}
+.boton-esp{
+    background-color: $negro2;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    transition: all 0.5s ease-in-out;
+    &:hover{
+        color: $blanco;
+        background-color: $negro;
+        transform: translateY(-6%);
+    }
+}
+
+.boton-volver{
+    max-width: 15rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem;
+    border: none;
+    color: $blanco;
+    border-radius: 3rem;
+    i{
+        color: $blanco;
+        font-size: 3rem;
+        &:hover{
+            color: $gris;
+        }
+    }
+    cursor: pointer;
+    &:hover{
+        color: $gris;
+    }
+    &.azul{
+        background-color: $azulMarino;
+        &:hover{
+            background-color: darken($azulMarino,10);
+        }
+    }
+    &.naranja{
+        background-color: $amarillo;
+        &:hover{
+            background-color: darken($amarillo,10);
+        }
+    }
+}

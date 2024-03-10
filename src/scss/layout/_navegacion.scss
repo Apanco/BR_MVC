@@ -1,0 +1,195 @@
+.contenido-barra{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem 0;
+    @include tablet{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+.barra-fija{ 
+    margin: 0;
+    padding: 1rem 0;
+    width: 100%;
+    transition: all 0.5s ease;
+    &.activo{
+        padding: 0;
+        background-color: $azulMarino;
+    }
+}
+.barra .no-inicio{
+    background-color: $azulMarino;
+}
+.barra{
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    
+}
+.navegacion{
+    
+    
+    @include tablet{
+        display: flex;
+        align-items: center;
+    }
+    a{
+        color: $blanco;
+        text-decoration: none;
+        font-size: 1.6rem;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        @include tablet{
+            margin-right: 2rem;
+            // &:last-of-type{
+            //     margin-right: 0;
+            // }
+        }
+        &:hover{
+            color: $amarillo;
+        }
+    }  
+}
+.toggle-btn{
+    margin: auto 0;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    @include tablet{
+        display: none;
+    }
+}
+.fa-solid{
+    color: $blanco;
+    font-size: 3rem;
+}
+.logo img{
+    padding: auto;
+}
+.menu-desplegable{
+    // display: none;
+    position: relative;
+    z-index: 10;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    height: 0;
+    margin-top: 0;
+    width: 80%;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    @include tablet{
+        display: none;
+    }
+    .navegacion{
+        
+        @include tablet{
+            display: none;
+        }
+        a{
+            &:hover{
+                background-color: $amarillo;
+                color: $blanco;
+            }
+        }
+    }
+    &.auth{
+        &.open{
+            width: 80%;
+            height: 21rem;
+        }
+    }
+    &.open{
+        // display: block;
+        width: 80%;
+        height: 18rem;//18 sin
+    }
+}
+.fija{
+    display: none;
+    @include tablet{
+        display: flex;
+    }
+}
+
+//Boton para cambiar de modo
+.container{
+    background-color: $blanco;
+    position: relative;
+    width: 6rem;
+    height: 3rem;
+    box-shadow: inset 4px 4px 6px $gris,
+                inset -4px -4px 6px $blanco;
+    cursor: pointer;
+    border-radius: 2.5rem;
+    // margin: auto;
+    // margin-top: 1.5rem;
+}
+.toggle{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 3rem;
+    height: 3rem;
+    transform: scale(0.7);
+    background-color: linear-gradient(145deg, #d8d8d8, $blanco);
+    border-radius: 2.5rem;
+    box-shadow: 3px 3px 8px #c4c4c4,
+                -3px -3px 8px $blanco;
+    transition: all 0.5s ease;
+}
+.active{
+    box-shadow: inset 4px 4px 6px #1f2024,
+                inset -4px -4px 6px #373a40;
+    background-color: #373a40;
+    .toggle{
+        left: 3rem;
+        // background-color: #373a40;
+        box-shadow: 4px 4px 10px #1f2024,
+                -4px -4px 10px #161616;
+    }
+}
+.container2{
+    background-color: $blanco;
+    position: relative;
+    width: 6rem;
+    height: 3rem;
+    box-shadow: inset 4px 4px 6px $gris,
+                inset -4px -4px 6px $blanco;
+    cursor: pointer;
+    border-radius: 2.5rem;
+    margin: auto;
+    margin-top: 1.5rem;
+}
+.toggle2{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 3rem;
+    height: 3rem;
+    transform: scale(0.7);
+    background-color: linear-gradient(145deg, #d8d8d8, $blanco);
+    border-radius: 2.5rem;
+    box-shadow: 3px 3px 8px #c4c4c4,
+                -3px -3px 8px $blanco;
+    transition: all 0.5s ease;
+}
+.active2{
+    box-shadow: inset 4px 4px 6px #1f2024,
+                inset -4px -4px 6px #373a40;
+    background-color: #373a40;
+    .toggle2{
+        left: 3rem;
+        // background-color: #373a40;
+        box-shadow: 4px 4px 10px #1f2024,
+                -4px -4px 10px #161616;
+    }
+}
